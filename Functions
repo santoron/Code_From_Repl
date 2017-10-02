@@ -1,0 +1,55 @@
+#Functions  *THESE WILL NOT WORK, THEY ARE JUST FOR EXPLANATION*
+#A function in Python is defined by a def statement. 
+#That def statement is then followed by a "Parameter List". 
+#The parameter list consists of none or more parameters. Parameters are called arguments, if the function is called. The function body consists of indented statements. The function body gets executed every time the function is called. 
+#Parameter can be mandatory or optional. The optional parameters (zero or more) must follow the mandatory parameters.
+#Function bodies can contain a return statement. It can be anywhere in the function body. This statement ends the execution of the function call and "returns" the result, i.e. the value of the expression following the return keyword, to the caller. If there is no return statement in the function code, the function ends, when the control flow reaches the end of the function body. 
+#Example:
+def add(x,y):
+  """Return x plus y"""
+  return x+y
+#In the following interactive session, the function we previously defined will be called:
+add(4,5)
+add(8,3)
+
+#Example of a Function with Optional Parameters
+def add(x, y=5):
+  """Return x plus y optional"""
+  return x+y
+#Calls to this funciton could look like this:
+add(4)
+add(8,3)
+
+#Docstring
+#The first statement in the body of a function is usually a string, which can be accessed with function_name.__doc__ 
+#This statement is called Docstring. 
+#Example:
+execfile("function1.py")
+add.__doc__
+add2.__doc__
+
+#Keyword Parameters
+#Using keyword parameters is an alternative way to make funciton calls. The definition of the funciton doesn't change.
+#Example:
+def sumsub(a,b, c=0, d=0):
+  return a-b+c-d
+#Keyword parameters can only be those, which are not used as positional arguments.
+sumsub(12,4)
+sumsub(12,4,27,23)
+sumsub(12,4,d=27, c=23)
+
+#Arbitrary Number of parameters
+#There are many situations in programming, in which the exact number of necessary parameters cannot be determined a-priori. An arbitraty parameter number can be accomplished in Python with so-called tuple references. An Asterisk "*" is used in front of the last parameter name to denote it as a tuple reference. This asterisk shouldn't be mistaken with the C syntax, where this notation is connected to pointers. 
+#Example:
+
+def arbitrary(x, y, *more):
+  print "x=", x, ", y=", y
+  print "arbitrary: ", more
+
+#x and y are regular positional paramters in the previous function. * more is a tuple reference
+#Example:
+execfile("Funktion1.py")
+arbitrary(3,4)
+arbitrary: ()
+x=3, x=4
+arbitrary: ('Hello World!', 3, 4)
