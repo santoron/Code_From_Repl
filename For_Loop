@@ -1,0 +1,7 @@
+list1=["one", "two", "three", "four"]
+for num1 in list1:
+  if num1 == "four":
+    print("No 4's allowed")
+    break
+  print("The number " + num1)
+
