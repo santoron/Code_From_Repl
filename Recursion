@@ -1,0 +1,41 @@
+#Recursion
+#Recursion is a way of programming or coding a problem, in which a function calls itself one or more times in its body. Usually, it is returning the return value of this function call.If a function definition fulfils the condition of recursion, we call this function a recursive function. 
+#Termination condition: A recursive function has to terminate to be used in a program. A recursive function terminates, if with every recursive call the solution of the problem is downsized and moves towards a base case. A base case is a case, where the problem can be solved without further recursion. A recursion can lead to an infinite loop, if the base case is not met in the calls. 
+print("Recursion")
+def factorial(n):
+    print("factorial has been called with n = " + str(n))
+    if n == 0:
+        return 1
+    else:
+        res = n * factorial(n-1)
+        print("intermediate result for ", n, " * factorial(" ,n-1, "): ",res)
+        return res	
+
+print(factorial(5))
+
+print("_________________________________________________")
+
+#The Pitfalls of Recursion
+#This subchapter of our tutorial on recursion deals with the Fibonacci numbers.
+#The Fibonacci numbers are defined by: 
+#Fn = Fn-1 + Fn-2 
+#with F0 = 0 and F1 = 1 
+#The Fibonacci numbers are easy to write as a Python function. It's more or less a one to one mapping from the mathematical definition:
+def fib(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fib(n-1) + fib(n-2)
+#An iterative solution for the problem is also easy to write, though the recursive solution looks more like the mathematical definition:
+def fibi(n):
+    a, b = 0, 1
+    for i in range(n):
+        a, b = b, a + b
+    return a
+
+	
+	
+	
+	
